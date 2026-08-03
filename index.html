@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renne Ashar - Clinical Psychiatrist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --sage: #5B87A1;
+            --sage-dark: #1E2F3B;
+            --sage-light: #C4D8E6;
+            --cream: #f5f1eb;
+            --cream-dark: #ebe5db;
+            --text-dark: #2d2d2d;
+            --text-medium: #555;
+            --text-light: #777;
+            --white: #ffffff;
+            --border: #e0d9d0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            padding: 20px 0;
+            background: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            border: 2px solid var(--sage);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--sage);
+            fill: none;
+            stroke-width: 1.5;
+        }
+
+        .logo-text h1 {
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            line-height: 1.2;
+        }
+
+        .logo-text span {
+            font-size: 10px;
+            letter-spacing: 2px;
+            color: var(--text-light);
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+        }
+
+        nav {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        nav a {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-medium);
+            transition: color 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--sage-dark);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--sage);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--sage-dark);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text-dark);
+            border: 1px solid var(--text-dark);
+        }
+
+        .btn-outline:hover {
+            background: var(--text-dark);
+            color: var(--white);
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(to right, var(--cream) 60%, transparent 60%);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 520px;
+        }
+
+        .tagline {
+            font-size: 11px;
+            letter-spacing: 3px;
+            color: var(--text-light);
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .hero h2 {
+            font-size: 52px;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .hero h2 em {
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        .hero p {
+            color: var(--text-medium);
+            margin-bottom: 32px;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .hero-buttons a {
+            font-size: 14px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .hero-image {
+            position: relative;
+            height: 500px;
+            background: var(--cream-dark);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .hero-image::after {
+            content: '';
+            position: absolute;
+            bottom: 40px;
+            right: 40px;
+            width: 120px;
+            height: 80px;
+            background: var(--white);
+            border-radius: 4px;
+            opacity: 0.6;
+        }
+
+        /* About */
+        .about {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .about-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-left {
+            position: relative;
+        }
+
+        .about-photo {
+            width: 320px;
+            height: 380px;
+            background: var(--cream-dark);
+            border-radius: 160px 160px 8px 8px;
+            position: relative;
+        }
+
+        .about-quote {
+            position: absolute;
+            bottom: -20px;
+            right: 0;
+            background: var(--sage);
+            color: var(--white);
+            padding: 32px;
+            border-radius: 16px;
+            width: 280px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .about-quote::before {
+            content: '"';
+            font-size: 60px;
+            line-height: 1;
+            font-family: 'Playfair Display', serif;
+            opacity: 0.3;
+            display: block;
+            margin-bottom: -20px;
+        }
+
+        .about-quote p {
+            font-size: 15px;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        .about-right .section-label {
+            font-size: 12px;
+            letter-spacing: 2px;
+            color: var(--text-light);
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .about-right h2 {
+            font-size: 36px;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .about-right .subtitle {
+            font-size: 12px;
+            letter-spacing: 2px;
+            color: var(--text-light);
+            margin-bottom: 24px;
+            font-weight: 500;
+        }
+
+        .about-right > p {
+            color: var(--text-medium);
+            margin-bottom: 40px;
+            line-height: 1.7;
+        }
+
+        .credentials {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .credential {
+            text-align: center;
+        }
+
+        .credential-icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 12px;
+            border: 1.5px solid var(--border);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--sage);
+        }
+
+        .credential-icon svg {
+            width: 22px;
+            height: 22px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 1.5;
+        }
+
+        .credential h4 {
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 4px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .credential p {
+            font-size: 12px;
+            color: var(--text-light);
+            line-height: 1.4;
+        }
+
+        /* Conditions */
+        .conditions {
+            padding: 80px 0;
+            background: var(--cream);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .section-header h3 {
+            font-size: 14px;
+            letter-spacing: 2px;
+            font-weight: 500;
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+        }
+
+        .section-header h3::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 2px;
+            background: var(--sage);
+            margin: 12px auto 0;
+        }
+
+        .conditions-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 20px;
+        }
+
+        .condition-card {
+            background: var(--white);
+            padding: 32px 20px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .condition-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+        }
+
+        .condition-icon {
+            width: 56px;
+            height: 56px;
+            margin: 0 auto 16px;
+            border: 1.5px solid var(--border);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--sage);
+        }
+
+        .condition-icon svg {
+            width: 26px;
+            height: 26px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 1.5;
+        }
+
+        .condition-card h4 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .condition-card p {
+            font-size: 12px;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+
+        /* Approach */
+        .approach {
+            padding: 0;
+            background: var(--white);
+        }
+
+        .approach-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .approach-left {
+            background: var(--sage);
+            color: var(--white);
+            padding: 80px 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .approach-left::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="80" cy="20" r="40" fill="rgba(255,255,255,0.03)"/></svg>');
+            background-size: cover;
+        }
+
+        .approach-label {
+            font-size: 12px;
+            letter-spacing: 2px;
+            opacity: 0.8;
+            margin-bottom: 16px;
+            font-weight: 500;
+        }
+
+        .approach-left h2 {
+            font-size: 32px;
+            line-height: 1.3;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .approach-left > p {
+            opacity: 0.9;
+            margin-bottom: 32px;
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        .approach-list {
+            list-style: none;
+        }
+
+        .approach-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 14px;
+            font-size: 14px;
+        }
+
+        .approach-list li::before {
+            content: '';
+            width: 18px;
+            height: 18px;
+            border: 1.5px solid rgba(255,255,255,0.5);
+            border-radius: 50%;
+            flex-shrink: 0;
+            margin-top: 2px;
+            position: relative;
+        }
+
+        .approach-list li::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            height: 10px;
+            border: solid rgba(255,255,255,0.8);
+            border-width: 0 1.5px 1.5px 0;
+            transform: rotate(45deg);
+            margin-left: 6px;
+            margin-top: 5px;
+        }
+
+        .approach-right {
+            padding: 80px 60px;
+            background: var(--white);
+        }
+
+        .approach-right h3 {
+            font-size: 14px;
+            letter-spacing: 2px;
+            font-weight: 500;
+            font-family: 'Inter', sans-serif;
+            margin-bottom: 40px;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            right: -20px;
+            width: 40px;
+            height: 1px;
+            border-top: 1px dashed var(--border);
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: var(--sage);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 600;
+            margin: 0 auto 16px;
+        }
+
+        .step-icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 12px;
+            border: 1.5px solid var(--border);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--sage);
+        }
+
+        .step-icon svg {
+            width: 22px;
+            height: 22px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 1.5;
+        }
+
+        .step h4 {
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .step p {
+            font-size: 12px;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background: var(--cream);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 32px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            font-size: 48px;
+            color: var(--sage);
+            opacity: 0.4;
+            line-height: 1;
+            font-family: 'Playfair Display', serif;
+            display: block;
+            margin-bottom: -10px;
+        }
+
+        .testimonial-card p {
+            font-size: 14px;
+            color: var(--text-medium);
+            line-height: 1.7;
+            margin-bottom: 16px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        .testimonial-author strong {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        /* CTA */
+        .cta {
+            padding: 40px 0;
+            background: var(--white);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .cta-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--cream);
+            padding: 40px 60px;
+            border-radius: 12px;
+        }
+
+        .cta-content {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .cta-icon {
+            width: 48px;
+            height: 48px;
+            border: 1.5px solid var(--sage);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--sage);
+            flex-shrink: 0;
+        }
+
+        .cta-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 1.5;
+        }
+
+        .cta-text h3 {
+            font-size: 20px;
+            margin-bottom: 4px;
+            font-weight: 500;
+        }
+
+        .cta-text p {
+            font-size: 14px;
+            color: var(--text-medium);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--white);
+            padding: 60px 0 30px;
+        }
+
+        .footer-inner {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand .logo {
+            margin-bottom: 16px;
+        }
+
+        .footer-brand p {
+            font-size: 13px;
+            color: var(--text-light);
+            line-height: 1.6;
+            max-width: 240px;
+        }
+
+        .footer-col h4 {
+            font-size: 12px;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            font-size: 13px;
+            color: var(--text-light);
+            transition: color 0.3s;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--sage-dark);
+        }
+
+        .footer-contact p {
+            font-size: 13px;
+            color: var(--text-light);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-links a {
+            width: 36px;
+            height: 36px;
+            border: 1px solid var(--border);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-medium);
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--sage);
+            color: var(--white);
+            border-color: var(--sage);
+        }
+
+        .social-links svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-bottom p {
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .conditions-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .step:not(:last-child)::after {
+                display: none;
+            }
+            .footer-inner {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+            .hero-inner, .about-inner, .approach-inner {
+                grid-template-columns: 1fr;
+            }
+            .hero {
+                background: var(--cream);
+            }
+            .hero h2 {
+                font-size: 36px;
+            }
+            .about-photo {
+                width: 100%;
+                max-width: 320px;
+            }
+            .credentials {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .conditions-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            .cta-inner {
+                flex-direction: column;
+                text-align: center;
+                gap: 24px;
+            }
+            .footer-inner {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+        }
+    </style>
+<base target="_blank">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-inner">
+            <div class="logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C7 2 3 6 3 11c0 2.5 1 4.8 2.7 6.5.3.3.5.7.5 1.1V21h4v-2h2v2h4v-2.4c0-.4.2-.8.5-1.1C20 15.8 21 13.5 21 11c0-5-4-9-9-9z"/><path d="M9 13c.5.3 1.2.5 2 .5s1.5-.2 2-.5"/><circle cx="9" cy="10" r="1"/><circle cx="15" cy="10" r="1"/></svg>
+                </div>
+                <div class="logo-text">
+                    <h1>Renne Ashar</h1>
+                    <span>CLINICAL PSYCHIATRIST</span>
+                </div>
+            </div>
+            <nav>
+                <a href="#" class="active">Home</a>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Approach</a>
+                <a href="#">Resources</a>
+                <a href="#">Contact</a>
+                <a href="#" class="btn btn-primary">Book an Appointment</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container hero-inner">
+            <div class="hero-content">
+                <p class="tagline">COMPASSIONATE. EVIDENCE-BASED. PERSONALIZED CARE.</p>
+                <h2>Better Mental Health,<br><em>Better Life.</em></h2>
+                <p>Comprehensive psychiatric care for adults, adolescents and older adults. Medication management, psychotherapy and holistic support—tailored to you.</p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn btn-primary">Book a Consultation</a>
+                    <a href="#">Learn More <span>→</span></a>
+                </div>
+            </div>
+            <div class="hero-image"></div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about">
+        <div class="container about-inner">
+            <div class="about-left">
+                <div class="about-photo"></div>
+                <div class="about-quote">
+                    <p>Mental health care that is collaborative, respectful and evidence-based.</p>
+                </div>
+            </div>
+            <div class="about-right">
+                <p class="section-label">ABOUT ME</p>
+                <h2>Hi, I'm Renne Ashar</h2>
+                <p class="subtitle">CLINICAL PSYCHIATRIST</p>
+                <p>I am committed to helping you understand your challenges, improve your mental well-being and build a healthier, more fulfilling life. My practice combines medical expertise with empathy, creating a safe space for healing.</p>
+                <div class="credentials">
+                    <div class="credential">
+                        <div class="credential-icon">
+                            <svg viewBox="0 0 24 24"><path d="M4.8 2.3A.3.3 0 005 2h4a1 1 0 001-1V1a1 1 0 00-1-1H5a3 3 0 00-3 3v14a3 3 0 003 3h4a1 1 0 001-1v-1a1 1 0 00-1-1H5a.3.3 0 00-.2-.7V2.3z"/><path d="M20.2 2.3A.3.3 0 0020 2h-4a1 1 0 00-1 1v1a1 1 0 001 1h4a.3.3 0 00.2.3v15.4a.3.3 0 00-.2.3h-4a1 1 0 00-1 1v1a1 1 0 001 1h4a3 3 0 003-3V3a3 3 0 00-3-3z"/><path d="M12 6v12"/></svg>
+                        </div>
+                        <h4>MD Psychiatry</h4>
+                        <p>AIIMS, New Delhi</p>
+                    </div>
+                    <div class="credential">
+                        <div class="credential-icon">
+                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                        </div>
+                        <h4>12+ Years</h4>
+                        <p>of Experience</p>
+                    </div>
+                    <div class="credential">
+                        <div class="credential-icon">
+                            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+                        </div>
+                        <h4>Personalized</h4>
+                        <p>Treatment</p>
+                    </div>
+                    <div class="credential">
+                        <div class="credential-icon">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                        </div>
+                        <h4>Confidential &</h4>
+                        <p>Non-Judgmental</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conditions -->
+    <section class="conditions">
+        <div class="container">
+            <div class="section-header">
+                <h3>CONDITIONS I TREAT</h3>
+            </div>
+            <div class="conditions-grid">
+                <div class="condition-card">
+                    <div class="condition-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+                    </div>
+                    <h4>Anxiety<br>Disorders</h4>
+                    <p>Panic disorder, social anxiety, OCD, phobias, generalized anxiety.</p>
+                </div>
+                <div class="condition-card">
+                    <div class="condition-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><path d="M9 10h.01"/><path d="M15 10h.01"/></svg>
+                    </div>
+                    <h4>Mood<br>Disorders</h4>
+                    <p>Depression, bipolar disorder, persistent low mood.</p>
+                </div>
+                <div class="condition-card">
+                    <div class="condition-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                    </div>
+                    <h4>Stress &<br>Burnout</h4>
+                    <p>Work stress, burnout, adjustment issues, emotional fatigue.</p>
+                </div>
+                <div class="condition-card">
+                    <div class="condition-icon">
+                        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+                    </div>
+                    <h4>ADHD &<br>Focus Issues</h4>
+                    <p>Assessment and management for adults and adolescents.</p>
+                </div>
+                <div class="condition-card">
+                    <div class="condition-icon">
+                        <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+                    </div>
+                    <h4>Sleep<br>Problems</h4>
+                    <p>Insomnia, poor sleep quality, circadian rhythm issues.</p>
+                </div>
+                <div class="condition-card">
+                    <div class="condition-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <h4>Other Areas</h4>
+                    <p>Trauma, relationship issues, personality concerns & more.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Approach -->
+    <section class="approach">
+        <div class="approach-inner">
+            <div class="approach-left">
+                <p class="approach-label">MY APPROACH</p>
+                <h2>Every mind is unique.<br>Every treatment should be too.</h2>
+                <p>I combine the best of psychiatric evaluation, medication management and psychotherapy to create a plan that fits you—your life, your goals and your values.</p>
+                <ul class="approach-list">
+                    <li>Thorough assessment</li>
+                    <li>Evidence-based treatment</li>
+                    <li>Collaborative decision making</li>
+                    <li>Ongoing support and follow-up</li>
+                </ul>
+            </div>
+            <div class="approach-right">
+                <h3>HOW WE WORK TOGETHER</h3>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-icon">
+                            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                        </div>
+                        <h4>Assessment</h4>
+                        <p>Understanding your history, symptoms and goals in detail.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-icon">
+                            <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0016.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 002 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                        </div>
+                        <h4>Personalized Plan</h4>
+                        <p>A tailored plan with the right combination of treatment options.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-icon">
+                            <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+                        </div>
+                        <h4>Ongoing Care</h4>
+                        <p>Regular follow-ups to monitor progress and make adjustments.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-icon">
+                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+                        </div>
+                        <h4>Better Well-being</h4>
+                        <p>Working together towards improved mental health and quality of life.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h3>WHAT MY PATIENTS SAY</h3>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p>Renne truly listens. She explains everything so clearly and helped me find the right treatment. I feel like myself again.</p>
+                    <p class="testimonial-author"><strong>— Rohan</strong>, 28</p>
+                </div>
+                <div class="testimonial-card">
+                    <p>After struggling with anxiety for years, I finally found the support and care I needed. Highly recommend her.</p>
+                    <p class="testimonial-author"><strong>— Simran</strong>, 34</p>
+                </div>
+                <div class="testimonial-card">
+                    <p>Professional, empathetic and thorough. I felt comfortable from the first session and saw real improvement.</p>
+                    <p class="testimonial-author"><strong>— Aarav</strong>, 41</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-inner">
+                <div class="cta-content">
+                    <div class="cta-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <div class="cta-text">
+                        <h3>Ready to take the first step?</h3>
+                        <p>You don't have to go through this alone. I'm here to help.</p>
+                    </div>
+                </div>
+                <a href="#" class="btn btn-primary">Book an Appointment <span>→</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C7 2 3 6 3 11c0 2.5 1 4.8 2.7 6.5.3.3.5.7.5 1.1V21h4v-2h2v2h4v-2.4c0-.4.2-.8.5-1.1C20 15.8 21 13.5 21 11c0-5-4-9-9-9z"/><path d="M9 13c.5.3 1.2.5 2 .5s1.5-.2 2-.5"/><circle cx="9" cy="10" r="1"/><circle cx="15" cy="10" r="1"/></svg>
+                        </div>
+                        <div class="logo-text">
+                            <h1>Renne Ashar</h1>
+                            <span>CLINICAL PSYCHIATRIST</span>
+                        </div>
+                    </div>
+                    <p>Compassionate care for your mind and well-being.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Approach</a></li>
+                        <li><a href="#">Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Information</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Fees & Insurance</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-contact">
+                    <h4>Contact</h4>
+                    <p>📞 +91 98765 43210</p>
+                    <p>✉️ hello@renneashar.com</p>
+                    <p>📍 Mumbai, India (In-person & Online)</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow</h4>
+                    <div class="social-links">
+                        <a href="#"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+                        <a href="#"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+                        <a href="#"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.33 29 29 0 00-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 Renne Ashar. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
